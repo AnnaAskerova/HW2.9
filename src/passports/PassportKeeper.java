@@ -1,24 +1,23 @@
 package passports;
 
-import recipes.Recipe;
-
-import java.util.LinkedList;
-import java.util.List;
-
+import java.util.HashSet;
+import java.util.Set;
 
 public class PassportKeeper {
-    private final List<Passport> passportKeeper = new LinkedList<>();
+    private final Set<Passport> passportKeeper = new HashSet<>();
 
     public void addPassport(Passport p) {
-        int x = passportKeeper.indexOf(p);
-        if (x == -1) {
-            passportKeeper.add(p);
+        if (passportKeeper.add(p)) {
+            return;
         } else {
-           var temp =  passportKeeper.get(x);
-            temp.setBornDate(p.getBornDate().toString());
-            temp.setSurname(p.getSurname());
-            temp.setName(p.getName());
-            temp.setMidName(p.getMidName());
+            for (Passport pass : passportKeeper) {
+                if (pass.getNumber().equals(p.getNumber())) {
+                    pass.setBornDate(p.getBornDate().toString());
+                    pass.setSurname(p.getSurname());
+                    pass.setName(p.getName());
+                    pass.setMidName(p.getMidName());
+                }
+            }
         }
     }
 
@@ -33,7 +32,7 @@ public class PassportKeeper {
 
     @Override
     public String toString() {
-        var sb = new  StringBuilder();
+        var sb = new StringBuilder();
         for (Passport passport : passportKeeper) {
             sb.append(passport.toString()).append('\n');
         }

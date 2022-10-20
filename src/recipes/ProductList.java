@@ -7,9 +7,7 @@ public class ProductList {
     private final Set<Product> products = new HashSet<>();
 
     public void addProduct(Product product) {
-        if (products.add(product)) {
-            return;
-        } else {
+        if (!products.add(product)) {
             System.out.println("Такой продукт есть в списке");
             throw new IllegalArgumentException();
         }
