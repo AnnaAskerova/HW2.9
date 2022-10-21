@@ -6,9 +6,7 @@ import java.util.Set;
 public class RecipeList {
     private final Set<Recipe> recipes = new HashSet<>();
     public void addRecipe(Recipe recipe) {
-        if (recipes.add(recipe)) {
-           return;
-        } else {
+        if (!recipes.add(recipe)) {
             System.out.println("Такой рецепт есть в списке");
             throw new IllegalArgumentException();
         }

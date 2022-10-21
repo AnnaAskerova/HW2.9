@@ -1,5 +1,5 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class RandomInteger {
@@ -9,8 +9,8 @@ public class RandomInteger {
         System.out.println(integers);
     }
 
-    static List<Integer> getNumbers(int a) {
-        List<Integer> integers = new LinkedList<>();
+    static Set<Integer> getNumbers(int a) {
+        Set<Integer> integers = new HashSet<>();
         for (int i = 0; i < a; i++) {
             integers.add((int) (Math.random() * 1001));
         }

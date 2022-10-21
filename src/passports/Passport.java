@@ -83,10 +83,10 @@ public class Passport {
         return number.equals(passport.number);
     }
 
-  /*  @Override
+    @Override
     public int hashCode() {
         return Objects.hash(number);
-    }*/
+    }
 
     @Override
     public String toString() {
