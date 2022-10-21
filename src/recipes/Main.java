@@ -12,8 +12,16 @@ public class Main {
         forBorsch.addProduct("Томаты", 119.90f, 0.6f);
         forBorsch.addProduct("Капуста", 46.90f, 0.4f);
         var borsch = new Recipe("Борщ", forBorsch);
+        System.out.println(forBorsch);
+        forBorsch.deleteProduct("Картофель");
+        forBorsch.deleteProduct("Карто");
+        forBorsch.markAsBought("Говядина");
+        forBorsch.setWeight("Говядина", 0.3f);
+        System.out.println(forBorsch);
 
-        var forMeatBall = new ProductList();
+
+
+      /*  var forMeatBall = new ProductList();
         forMeatBall.addProduct("Свинина", 450f, 0.3f);
         forMeatBall.addProduct("Яйца", 150f, 0.07f);
         forMeatBall.addProduct("Манная крупа", 79.90f, 0.05f);
@@ -26,7 +34,7 @@ public class Main {
         recipeList.addRecipe(borsch);
         recipeList.addRecipe(meatBalls);
         recipeList.addRecipe(meatBall);
-//        recipeList.addRecipe(meatBalls2);
-        System.out.println(recipeList);
+        recipeList.addRecipe(meatBalls2);
+        System.out.println(recipeList);*/
     }
 }
