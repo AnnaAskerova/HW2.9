@@ -1,25 +1,23 @@
 package homework210;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeMap;
 
 //домашка 2 задание 2
 public class IntegerString {
     Map<Integer, String> map;
 
     public IntegerString() {
-        map = new HashMap<>(10);
+        map = new TreeMap<>();
         for (int i = 0; i < 10; i++) {
             map.put(i, "Строка " + i);
         }
     }
 
     public void print() {
-        Iterator<String> i = map.values().iterator();
-        Iterator<Integer> j = map.keySet().iterator();
-        while (i.hasNext()) {
-            System.out.println(j.next().toString() + ':' + i.next());
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey().toString() + ':' + entry.getValue());
         }
     }
 
