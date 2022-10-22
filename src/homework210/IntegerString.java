@@ -1,15 +1,14 @@
 package homework210;
 
-import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 //домашка 2 задание 2
 public class IntegerString {
     Map<Integer, String> map;
 
     public IntegerString() {
-        map = new TreeMap<>();
+        map = new LinkedHashMap<>();
         for (int i = 0; i < 10; i++) {
             map.put(i, "Строка " + i);
         }
